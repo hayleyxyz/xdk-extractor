@@ -1,7 +1,3 @@
-//
-// Created by Oscar Berry on 15/03/2018.
-//
-
 #include <fstream>
 #include <stdexcept>
 #include "coff.h"

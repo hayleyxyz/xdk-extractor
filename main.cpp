@@ -2,7 +2,7 @@
 #include <fstream>
 #include <vector>
 #include "coff.h"
-
+#include <cmath>
 
 static const char CabMagic[] = { 'M', 'S', 'C', 'F' };
 
@@ -14,8 +14,6 @@ struct CabHeader {
 };
 
 void help(const char * name);
-
-#include <cmath>
 
 int main(int argc, const char * argv[]) {
 

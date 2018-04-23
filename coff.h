@@ -1,7 +1,3 @@
-//
-// Created by Oscar Berry on 15/03/2018.
-//
-
 #ifndef XDK_EXTRACTOR_COFF_H
 #define XDK_EXTRACTOR_COFF_H
 
