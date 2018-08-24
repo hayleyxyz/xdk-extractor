@@ -32,6 +32,7 @@ int main(int argc, const char * argv[]) {
 
     uint32_t peSize = coff::getSizeOfImage(file);
 
+    std::cout << std::hex << "Start of data: 0x" << peSize << std::endl;
 
     char * buffer = nullptr;
     uint32_t bufferSize = 0;
@@ -65,10 +66,10 @@ int main(int argc, const char * argv[]) {
 
         std::cout << "Extracting: " << fileNameBuffer << std::endl;
 
-        std::fstream outp;
-        outp.open(fileNameBuffer, std::ios::out | std::ios::binary);
-        outp.write(buffer, header.PackedSize);
-        outp.close();
+        std::fstream output;
+        output.open(fileNameBuffer, std::ios::out | std::ios::binary);
+        output.write(buffer, header.PackedSize);
+        output.close();
 
         peSize += header.PackedSize;
     }

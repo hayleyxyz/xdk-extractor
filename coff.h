@@ -15,6 +15,9 @@ namespace coff {
 
     static const uint32_t NameSize = 8;
 
+    /**
+     * Bunch of PE structures (stolen from llvm src)
+     */
     struct DOSHeader {
         uint16_t Magic;
         uint16_t UsedBytesInTheLastPage;
