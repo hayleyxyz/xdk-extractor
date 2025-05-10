@@ -5,6 +5,9 @@
 #include "coff.h"
 #include <cmath>
 
+static const char Version[] = "XDK Setup/Recovery Extractor v0.1.0";
+static const char GitHubUrl[] = "https://github.com/hayleyxyz/xdk-extractor";
+
 static const char CabMagic[] = { 'M', 'S', 'C', 'F' };
 
 struct CabHeader {
@@ -15,7 +18,9 @@ struct CabHeader {
 };
 
 void help(const char * name) {
-    std::cout << "Usage: " << name << " <XDKSetupXenonXXXX.exe>" << std::endl;
+    std::cout << Version << " " << GitHubUrl << std::endl;
+    std::cout << "Usage: " << name << " <XDKSetupXenonXXXX.exe>" << std::endl << std::endl;
+    std::cout << "Writes .cab files to the current directory named data_0.cab, data_1.cab, etc. Use 7z to extract the .cab files." << std::endl;
 }
 
 int main(int argc, const char * argv[]) {

@@ -35,9 +35,20 @@ jobs:
       run: cmake --build build --config Release
       shell: bash
 
-    - name: Upload artifact
+    - name: Upload artifact for Windows
+      if: runner.os == 'Windows'
       uses: actions/upload-artifact@v4
       with:
-        name: xdk_extractor-${{ runner.os }}
+        name: xdk-extractor-${{ runner.os }}
         path: |
-          *
+          build/Release/xdk-extractor.exe
+
+    - name: Upload artifact for macOS/Linux
+      if: runner.os == 'Linux' || runner.os == 'macOS'
+      uses: actions/upload-artifact@v4
+      with:
+        name: xdk-extractor-${{ runner.os }}
+        path: |
+          build/xdk-extractor
+
+
