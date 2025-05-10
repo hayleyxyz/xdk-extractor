@@ -40,4 +40,4 @@ jobs:
       with:
         name: xdk_extractor-${{ runner.os }}
         path: |
-          build/xdk_extractor*
+          *

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <cstring>
 #include "coff.h"
 #include <cmath>
 
@@ -13,7 +14,9 @@ struct CabHeader {
 
 };
 
-void help(const char * name);
+void help(const char * name) {
+    std::cout << "Usage: " << name << " <XDKSetupXenonXXXX.exe>" << std::endl;
+}
 
 int main(int argc, const char * argv[]) {
 
@@ -75,8 +78,4 @@ int main(int argc, const char * argv[]) {
     }
 
     return 0;
-}
-
-void help(const char * name) {
-    std::cout << "Usage: " << name << " <XDKSetupXenonXXXX.exe>" << std::endl;
 }

@@ -1,8 +1,8 @@
 #include <fstream>
 #include <iostream>
 #include <algorithm>
+#include <cstring>
 #include "coff.h"
-
 
 namespace coff {
     uint32_t getSizeOfImage(std::fstream& file) {
