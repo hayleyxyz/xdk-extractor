@@ -35,14 +35,14 @@ jobs:
     - name: Package binary
       run: |
         mkdir dist
-        cp build/Release/xdk-extractor.exe dist/
-        cp build/xdk_extractor dist/
+        if [ -f build/Release/xdk-extractor.exe ]; then cp build/Release/xdk-extractor.exe dist/; fi
+        if [ -f build/xdk-extractor ]; then cp build/xdk-extractor dist/; fi
         cd dist
         zip ../xdk_extractor-${{ runner.os }}.zip * || tar -czf ../xdk_extractor-${{ runner.os }}.tar.gz *
       shell: bash
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: xdk_extractor-${{ runner.os }}
         path: |
